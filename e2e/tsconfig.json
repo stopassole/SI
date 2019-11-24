@@ -1,0 +1,19 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../out-tsc/e2e",
+    "module": "commonjs",
+    "target": "es5",
+    "moduleResolution": "node",
+    "types": [
+      "node",
+    ],
+    "filesGlob": [
+      "./src/**/*.ts",
+      "./test/**/*.ts",
+      "./typings/index.d.ts",
+      "./custom_typings/**/*.d.ts",
+      "./node_modules/@types/**/*.d.ts"
+    ],
+  }
+}
