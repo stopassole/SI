@@ -1,0 +1,45 @@
+Exercício: Sistema de vídeo locadora
+
+Classe Pessoa
+{
+private atributo nome: string
+private atributo endereço: string
+private atributo telefone: string
+private atributo renda: float
+private método registrarpessoa(): string;
+private método consultarpessoa(): string;
+}
+
+Classe Pessoa_juridica
+{
+private atributo cnpj: integer
+}
+
+Classe Pessoa_fisica
+{
+private atributo cpf: string
+private atributo rg: string
+}
+
+Classe Locação
+{
+private atributo data_locacao: string
+private atributo data_devolucao: string
+private atributo situacao_locacao: string
+private atributo valor: float
+private método consultar_locacao (): string;
+private método consultar_atraso (): string
+}
+
+classe Filme
+{
+private atributo codigo: int
+private atributo titulo: string
+private atributo genero: string
+private método registrarfilme(): string
+private método consultarfilme(): string
+}
+
+Associação: 1 pessoa aluga 1..* locação
+Composição: 1 Locação compõe 1..* filme
+Herança: classe Pessoa_fisica e classe Pessoa_juridica herdam atributos nome, endereço, telefone e renda da classe Pessoa.
