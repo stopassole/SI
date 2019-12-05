@@ -10,7 +10,7 @@ import * as go from "gojs";
 export class AppComponent implements OnInit {
   public listClass = [];
   especificacao;
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
     this.getAtributes();
@@ -79,7 +79,7 @@ export class AppComponent implements OnInit {
             .match("método")
         ) {
           listClass[cont].methods.push({
-            name: frase.split(" ")[2].replace(":", ""),
+            name: frase.split(" ")[2].replace(":", "").replace("(", "").replace(")", ""),
             type: frase.split(" ")[3].replace(";", ""),
             visibility: frase.split(" ")[0],
             parameters: [{}]
@@ -165,7 +165,7 @@ export class AppComponent implements OnInit {
         go.TextBlock,
         { isMultiline: false, editable: true },
         new go.Binding("text", "name").makeTwoWay(),
-        new go.Binding("isUnderline", "scope", function(s) {
+        new go.Binding("isUnderline", "scope", function (s) {
           return s[0] === "c";
         })
       ),
@@ -173,7 +173,7 @@ export class AppComponent implements OnInit {
       go.GraphObject.make(
         go.TextBlock,
         "",
-        new go.Binding("text", "type", function(t) {
+        new go.Binding("text", "type", function (t) {
           return t ? ": " : "";
         })
       ),
@@ -186,7 +186,7 @@ export class AppComponent implements OnInit {
       go.GraphObject.make(
         go.TextBlock,
         { isMultiline: false, editable: false },
-        new go.Binding("text", "default", function(s) {
+        new go.Binding("text", "default", function (s) {
           return s ? " = " + s : "";
         })
       )
@@ -207,7 +207,7 @@ export class AppComponent implements OnInit {
         go.TextBlock,
         { isMultiline: false, editable: true },
         new go.Binding("text", "name").makeTwoWay(),
-        new go.Binding("isUnderline", "scope", function(s) {
+        new go.Binding("isUnderline", "scope", function (s) {
           return s[0] === "c";
         })
       ),
@@ -216,7 +216,7 @@ export class AppComponent implements OnInit {
         go.TextBlock,
         "()",
         // this does not permit adding/editing/removing of parameters via inplace edits
-        new go.Binding("text", "parameters", function(parr) {
+        new go.Binding("text", "parameters", function (parr) {
           var s = "(";
           for (var i = 0; i < parr.length; i++) {
             var param = parr[i];
@@ -230,7 +230,7 @@ export class AppComponent implements OnInit {
       go.GraphObject.make(
         go.TextBlock,
         "",
-        new go.Binding("text", "type", function(t) {
+        new go.Binding("text", "type", function (t) {
           return t ? ": " : "";
         })
       ),
@@ -275,7 +275,7 @@ export class AppComponent implements OnInit {
           go.TextBlock,
           "Properties",
           { row: 1, font: "italic 10pt sans-serif" },
-          new go.Binding("visible", "visible", function(v) {
+          new go.Binding("visible", "visible", function (v) {
             return !v;
           }).ofObject("PROPERTIES")
         ),
@@ -297,7 +297,7 @@ export class AppComponent implements OnInit {
           "PanelExpanderButton",
           "PROPERTIES",
           { row: 1, column: 1, alignment: go.Spot.TopRight, visible: false },
-          new go.Binding("visible", "properties", function(arr) {
+          new go.Binding("visible", "properties", function (arr) {
             return arr.length > 0;
           })
         ),
@@ -306,7 +306,7 @@ export class AppComponent implements OnInit {
           go.TextBlock,
           "Methods",
           { row: 2, font: "italic 10pt sans-serif" },
-          new go.Binding("visible", "visible", function(v) {
+          new go.Binding("visible", "visible", function (v) {
             return !v;
           }).ofObject("METHODS")
         ),
@@ -328,7 +328,7 @@ export class AppComponent implements OnInit {
           "PanelExpanderButton",
           "METHODS",
           { row: 2, column: 1, alignment: go.Spot.TopRight, visible: false },
-          new go.Binding("visible", "methods", function(arr) {
+          new go.Binding("visible", "methods", function (arr) {
             return arr.length > 0;
           })
         )
