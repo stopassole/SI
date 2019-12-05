@@ -53,7 +53,6 @@ export class AppComponent implements OnInit {
     });
   }
 
-
   criarClasse(frase, classe, listClass, i) {
     if (
       frase
@@ -444,7 +443,7 @@ export class AppComponent implements OnInit {
     // Gera as classes
     var nodedata = classes;
 
-    // Gera asrelações
+    // Gera as relações
     var linkdata = relacao;
 
     myDiagram["model"] = go.GraphObject.make(go.GraphLinksModel, {
