@@ -24,7 +24,7 @@ Classe Produto
 private atributo codigo: int
 private atributo valor: float
 private atributo descricao: string;
-private método listar (): string;
+private método listar(): string;
 }
 
 classe Carrinho
