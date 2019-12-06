@@ -62,10 +62,11 @@ export class AppComponent implements OnInit {
     ) {
       classe = {};
       classe.key = i;
-      classe.name = frase
+      var nomeClasse = frase
         .split(" ")[1]
         .replace("{", "")
         .replace("}", "");
+      classe.name = nomeClasse.substring(0, 1).toUpperCase() + nomeClasse.substring(1);
       classe.properties = [];
       classe.methods = [];
       listClass.push(classe);
