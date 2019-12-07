@@ -1,0 +1,42 @@
+Classe Pessoa
+{
+private atributo nome: string
+private atributo endereço: string
+public atributo telefone: string
+private atributo renda: float
+private método registrarpessoa(): string;
+private método consultarpessoa(): string;
+}
+
+Classe Pessoa_juridica
+{
+private atributo cnpj: integer
+}
+
+Classe Pessoa_fisica
+{
+private atributo cpf: string
+private atributo rg: string
+}
+
+Classe Produto
+{
+private atributo codigo: int
+private atributo valor: float
+private atributo descricao: string;
+private método listar (): string;
+}
+
+classe Carrinho
+{
+private atributo codigo: int
+private atributo itens: Produtos[]
+private atributo valorTotal: double
+private método exibeCarrinho(): void;
+private método fecharCompra(): float;
+}
+
+Generalização: Pessoa agrega Pessoa_fisica
+Generalização: Pessoa agrega Pessoa_juridica
+Agregação: Carrinho no Produto 
+
