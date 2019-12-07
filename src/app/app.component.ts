@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
     return new Promise((resolve, reject) => {
       let file: any = [];
       this.http
-        .get("assets/facil.txt", { responseType: "text" })
+        .get("assets/especificacao.txt", { responseType: "text" })
         .subscribe(data => {
           try {
             file = data.split("\n");
