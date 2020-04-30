@@ -20,7 +20,7 @@
     "@angular/platform-browser-dynamic": "~8.2.0",
     "@angular/router": "~8.2.0",
     "gojs": "^2.1.2",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "line-by-line": "^0.1.6",
     "ngx-fs": "0.0.1",
     "path": "^0.12.7",
